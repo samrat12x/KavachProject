@@ -1,6 +1,7 @@
 import { StyleSheet,
   View,
   Alert,
+  Image,
    Text,
    TextInput,
    TouchableOpacity ,
@@ -9,7 +10,7 @@ import { StyleSheet,
 import React from 'react'
 import { useState } from 'react';
 
-export default function Signup() {
+export default function Signup(props) {
 
     const [Username,setUser]=useState('void');  // storing whatever user is typing, we store it in a local state
     const [Email,setMail]=useState('void');  // storing whatever user is typing ,we store it in a local state
@@ -88,7 +89,8 @@ export default function Signup() {
         </View>
   <View style={styles.sign_up}>
   <TouchableOpacity 
-  onPress={() => Alert.alert('Button with adjusted color pressed')}
+  onPress={() => props.navigation.goBack()}
+  // onPress={() => Alert.alert('Button with adjusted color pressed')}
   style={{  marginTop: 35,width:180,borderRadius:25,padding:10 ,backgroundColor:'rgba(0, 0, 0, 0.53)'}}>
       <Text style={{fontSize:24 ,  textAlignVertical: "center",  textAlign: "center" , color:'white'}} >Sign up</Text>
   </TouchableOpacity>

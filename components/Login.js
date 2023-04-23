@@ -10,7 +10,7 @@ import { View,
 import { useState } from 'react'
 import React from 'react'
 import styles from "./styles"
-export default function Login() {
+export default function Login(props) {
   
   const[Username,setUser]=useState('void');  // storing whatever user is typing, we store it in a local state
   const[Password,setPass]=useState('void');  // storing whatever user is typing ,we store it in a local state
@@ -43,13 +43,14 @@ export default function Login() {
           onChangeText={(val)=>setPass(val)}
       />
 <TouchableOpacity 
-onPress={() => Alert.alert('Button with adjusted color pressed')}
+onPress={() => props.navigation.navigate('Home')}
+
 style={{  marginTop: 35,width:180,borderRadius:25,padding:10 ,backgroundColor:"#D9D9D9"}}>
     <Text style={{fontSize:24 ,  textAlignVertical: "center",  textAlign: "center"}} >Login</Text>
 </TouchableOpacity>
 
 <TouchableOpacity 
-onPress={() => Alert.alert('Button with adjusted color pressed')}
+onPress={() => props.navigation.navigate('Sign')}
 style={{  marginTop: 35,width:180,borderRadius:25,padding:10 ,backgroundColor:'rgba(0, 0, 0, 0.53)'}}>
     <Text style={{fontSize:24 ,  textAlignVertical: "center",  textAlign: "center" , color:'white'}} >Sign up</Text>
 </TouchableOpacity>
