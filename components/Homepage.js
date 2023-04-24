@@ -130,7 +130,10 @@ import { StyleSheet,
     return (
         <View >
         <Header/>
-       <Mid/>         
+       <Mid/>       
+       <View style={styles.footer}>
+        <Text style={styles.footer_text}>Created by Mind Hack Zombies</Text>
+        </View>  
        </View>
     )
   }
@@ -191,7 +194,16 @@ import { StyleSheet,
       
     }
     ,
-    
+    footer:{
+      alignItems:'center'
+      
+    },
+    footer_text:{
+      fontWeight:'bold',
+      fontSize:20,
+      color:'black'
+     
+    }
    
     
     });   //style sheet ends
